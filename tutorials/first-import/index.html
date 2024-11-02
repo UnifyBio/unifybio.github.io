@@ -1,0 +1,1277 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://unifybio.github.io/tutorials/first-import/">
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../../local-system/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Your First Import - UnifyBio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#your-first-import" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UnifyBio" class="md-header__button md-logo" aria-label="UnifyBio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UnifyBio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Your First Import
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UnifyBio" class="md-nav__button md-logo" aria-label="UnifyBio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UnifyBio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About UnifyBio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Your First Import
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Your First Import
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizing Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-tsvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using TSVs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-import-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Import Config
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating an Import Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-your-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Your Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-entries-for-each-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Providing Entries for each File
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Providing Entries for each File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patient-subject-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patient / Subject data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samples-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Samples data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-timepoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding timepoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-in-measurementstsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping in measurements.tsv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clinicaltsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      clinical.tsv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-unify-cli-import-steps-with-your-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Unify CLI import steps with your dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../local-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local System Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unify-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Unify CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../import-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Import Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizing Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-tsvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using TSVs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-import-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Import Config
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating an Import Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-your-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Your Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-entries-for-each-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Providing Entries for each File
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Providing Entries for each File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patient-subject-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patient / Subject data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samples-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Samples data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-timepoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding timepoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-in-measurementstsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping in measurements.tsv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clinicaltsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      clinical.tsv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-unify-cli-import-steps-with-your-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Unify CLI import steps with your dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="your-first-import">Your First Import</h1>
+<p>This tutorial takes you through the process of creating, then importing your own
+minimal UnifyBio dataset. Before attempting to these steps, make sure you have a
+local environment capable of completing all the steps in the <a href="../quickstart/">quickstart</a>.</p>
+<p>The import we walk through is the synthetic <code>example-import</code> included in the
+Pattern UnifyBio distribution. It should be fairly simple to adapt to other
+small datasets; we encourage you to work through the tutorial a second time
+with some of your own data, once you've completed it for the example case.</p>
+<p>At any point, feel free to refer to the <a href="../../import-config/">import config</a> docs
+for a more thorough explanation of any special unify forms or syntax you encounter
+during the tutorial.</p>
+<h2 id="organizing-files">Organizing Files</h2>
+<p>The following shows an example directory structure for our simple import, which corresponds
+to conventions used in the Pattern Data Commons system:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>example-import
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── config.yaml
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── mappings.yaml
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└── data
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   └── raw
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       ├── clinical.tsv
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>       ├── measurements.tsv
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>       ├── patients.tsv
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>       └── samples.tsv
+</span></code></pre></div>
+<p>For smaller and medium sized imports, Pattern uses ordinary git version control (sometimes with LFS enabled)
+to manage the state of the import that is the basis for the UnifyBio dataset. This ensures that database
+states can be linked back to git repos and commit hashes, guaranteeing a traceable history which can be used to
+source causes of error, or forward propagate changes if issues are found with the underlying dataset.</p>
+<p>You do not necessarily need to use this exact scheme in your own work, but some similar
+discipline about storing and tracking versions of data as it is imported into UnifyBio is recommended.</p>
+<p>Importantly, this captures the typical components of any import:</p>
+<ul>
+<li>the <code>config.yaml</code> and <code>mappings.yaml</code> files which contain the mappings and import directives which
+  specify to the Unify CLI how the data should be imported.</li>
+<li>raw data (stored in <code>data/raw</code>)</li>
+</ul>
+<p>You will also typically see:</p>
+<ul>
+<li><code>scripts/</code> for preprocessing the raw data into the form imported into the UnifyBio system.</li>
+<li>the data as transformed by the scripts, in <code>data/processed/</code></li>
+</ul>
+<h2 id="using-tsvs">Using TSVs</h2>
+<p>The present version of the Unify CLI can only process TSV files for input. Unify uses tab-separated files
+to avoid any of the ambiguities and problems that occur with arbitrarily delimited files, given that
+compact and obscure data encodings and fulltext natural language sentences and similar are often 
+imported and harmonized into clinical and molecular dataset. The TSV files do not need to
+correspond to any particular data model, but there should be a column to column mappings to attributes
+in the schema.</p>
+<h2 id="creating-an-import-config">Creating an Import Config</h2>
+<p>We will create our own import config file for the purposes of this tutorial. We will store it
+as a sibling to the current reference config file provided in the distribution and name it
+<code>tutorial-config.yaml</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>example-import
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── config.yaml
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="hll">├── tutorial-config.yaml
+</span></span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── mappings.yaml
+</span></code></pre></div>
+<p>To get started, provide the top level structure in the YAML file.</p>
+<div class="language-yaml highlight"><span class="filename">tutorial-config.yaml</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">:unify/import</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some.user@gmail.com&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span></code></pre></div>
+<h3 id="setting-up-your-editor">Setting Up Your Editor</h3>
+<p>The Unify CLI can generate a JSON Schema you can apply to your YAML editing process in
+order to provide static checks on the structure and content of the import, as well as
+to provide autocomplete, attribute documentation, and more. If you are using the Pattern UnifyBio distribution,
+this has been pregenerated for you and can be found under the distribution directry
+as the file <code>candel-import-config-schema.json</code>. If you need to generate it, you can do so
+with this CLI command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/unify infer-json-schema --json-schema &quot;YOUR-FILE-NAME-HERE.json&quot;
+</span></code></pre></div>
+<p>Below are links for how to configure common editors to use JSON Schema when editing YAML files:</p>
+<ul>
+<li>VSCode, via the <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">Red Hat YAML extension</a>
+  steps are documented <a href="https://developers.redhat.com/blog/2020/11/25/how-to-configure-yaml-schema-to-make-editing-files-easier">here</a>.</li>
+<li>JetBrains products such as IntelliJ, Dataspell, and PyCharm, using the processes documented
+<a href="https://www.jetbrains.com/help/idea/yaml.html#json_schema">here</a>.</li>
+</ul>
+<p>These are summarized in the Unify import config docs as well.</p>
+<h3 id="providing-entries-for-each-file">Providing Entries for each File</h3>
+<p>We have four files to provide mappings for:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>patients.tsv
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>clinical.tsv
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>samples.tsv
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>measurements.tsv
+</span></code></pre></div>
+<p>In the following subsections you will write the import config for each of them.</p>
+<h4 id="patient-subject-data">Patient / Subject data</h4>
+<p>The <code>patients.tsv</code> file contains data on our patients. Patients are currently modeled
+under the <code>subject</code> entity in the Pattern schema. A list of available attributes can
+be found <a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/subject.html">here</a>.
+If you have configured your editor, you should get autocomplete suggestions as you type
+which contain the same documented information.</p>
+<p>In the file, we have the following columns and table shape:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>age</th>
+<th>sex</th>
+<th>disease</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subject-group-A-860</td>
+<td>104</td>
+<td>M</td>
+<td>lung adenocarcinoma</td>
+</tr>
+<tr>
+<td>subject-group-B-478</td>
+<td>35</td>
+<td>F</td>
+<td>lung adenocarcinoma</td>
+</tr>
+<tr>
+<td>subject-group-A-437</td>
+<td>49</td>
+<td>male</td>
+<td>lung adenocarcinoma</td>
+</tr>
+</tbody>
+</table>
+<p>Looking at the patient data in the schema, we can find the appropriate attributes to map to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>id =&gt; :subject/id
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>age =&gt; :subject/age
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sex =&gt; :subject/sex
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>disease =&gt; :subject/freetext-disease
+</span></code></pre></div>
+<p>(Well, the last one may not be obvious, but for the purpose of the tutorial, we'll have you
+use freetext instead of mapping the terms into an ontology.)</p>
+<p>In its simplest form, the yaml config file is just a literal translation of the
+mapping from columns to attributes that we just identified. The required update
+has been higlighted for you in the snippet below:</p>
+<div class="language-yaml highlight"><span class="filename">tutorial-config.yaml</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">:unify/import</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some.user@gmail.com&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="hll"><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span></span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/patients.tsv&quot;</span>
+</span></span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="hll"><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span></span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="hll"><span class="w">      </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sex&quot;</span>
+</span></span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="hll"><span class="w">      </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;age&quot;</span>
+</span></span></code></pre></div>
+<p>There's actually one more thing we have to tend to here, though. <code>:subject/sex</code>
+values should be mapped to an <em>enum</em>, not simply read into the schema. You can
+find the enums in the <a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/subject.sex.html">schema visualizer</a>.</p>
+<p>Mapping enums requires an additional <code>mappings.yaml</code> file. For now, we won't worry
+about writing it, but link to the existing <code>mappings.yaml</code> in the example import,
+then inspect the relevant contents.</p>
+<div class="language-yaml highlight"><span class="filename">tutorial-config.yaml</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">:unify/import</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some.user@gmail.com&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="hll"><span class="w">  </span><span class="nt">mappings</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mappings.yaml</span>
+</span></span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/patients.tsv&quot;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">      </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sex&quot;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">      </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;age&quot;</span>
+</span></code></pre></div>
+<p>Here are the contents of mappings.yaml relevant to the <code>:subject/sex</code> attribute:</p>
+<p><div class="language-yaml highlight"><span class="filename">mappings.yaml content</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">unify/mappings</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">enum/subject.sex</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">subject.sex/male</span><span class="p">:</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Male&quot;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;M&quot;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;m&quot;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;male&quot;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">subject.sex/female</span><span class="p">:</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Female&quot;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;female&quot;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;F&quot;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;f&quot;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nt">unify/variables</span><span class="p">:</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="nt">subject/sex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enum/subject.sex</span>
+</span></code></pre></div>
+This mapping lets Unify know that when it encounters literals like "M" or "Male" they should be
+mapped to <code>:subject.sex/male</code>, and likewise for "F" or "female" to <code>:subject.sex/female</code>.</p>
+<p>We are now ready to add more data! Note, that if you want to, you can incrementally run prepare
+or even transact as you go (assuming you're using local dev databases), just to check for errors
+or omitted mappings. For the purpose of the tutorial, we'll continue, but at any point you can
+refer back to the commonds from the <a href="../quickstart/">quickstart</a> and run the commands there
+on your import in progress.</p>
+<h3 id="samples-data">Samples data</h3>
+<p>Next we will map in <code>samples.tsv</code>. The columns and data layout are as below:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>| anatomic-location | id               | patient-id          | timepoint |
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>|-------------------|------------------|---------------------|-----------|
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>| lung              | sample-HIKIKDGG2 | subject-group-A-860 | baseline  |
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>| lung              | sample-JJGDJCEB1 | subject-group-B-478 | baseline  |
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| pancreas          | sample-BEFKJJCB7 | subject-group-A-437 | baseline  |
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>| pancreas          | sample-IBHIBFDG3 | subject-group-B-62  | baseline  |
+</span></code></pre></div>
+<p>Again, we will consult the <a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/index.html">schema dashboard</a>
+for <a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/sample.html">samples</a>
+to find the right attributes. The new mappings are provided below:</p>
+<div class="language-yaml highlight"><span class="filename">dataset portion of tutorial-config.yaml</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/patients.tsv&quot;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sex&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;age&quot;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="hll"><span class="w">  </span><span class="nt">samples</span><span class="p">:</span>
+</span></span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/samples.tsv&quot;</span>
+</span></span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="hll"><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span></span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="hll"><span class="w">      </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient-id&quot;</span>
+</span></span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="hll"><span class="w">      </span><span class="nt">freetext-anatomic-site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;anatomic-location&quot;</span>
+</span></span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="hll"><span class="w">      </span><span class="nt">timepoint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;timepoint&quot;</span>
+</span></span></code></pre></div>
+<p>There are two attributes used of a new kind here — timepoint and subject are
+both <em>ref</em> attributes. That means they refer to other entities, in this case,
+the <code>subject</code> and <code>timepoint</code> entities. You will notice, if you look through
+the tables, that we do not have a <code>timepoints.tsv</code> file. However, as you can
+quick verify with grep, R, pandas, or spreadsheet software, we only have
+two timepoints, the <code>baseline</code> timepoint and the <code>eos</code> timepoint.</p>
+<p>It is not necessary to add every data point in the dataset as a table, we can
+actually just use data literals in the import. </p>
+<h3 id="adding-timepoints">Adding timepoints</h3>
+<p>Data literal entities lack a <code>unify/input-tsv-file</code> directive. We'll add one for timepoints
+to our import config. First we'll consult the
+<a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/timepoint.html">schema docs</a>
+and see which attributes are available that we have the information to provide. It looks
+like we need to provide a <code>timepoint/id</code> and <code>timepoint/relative-order</code>. Since we only
+have two timepoints, we'll use <code>1</code> and <code>2</code> for the relative ordering. We can also click
+on the enum information for
+<a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/timepoint.type.html"><code>timepoint/type</code></a>
+and we see our timepoint names <code>baseline</code> and <code>eos</code> map neatly on to two types, so we'll provide
+those values as well.</p>
+<div class="language-yaml highlight"><span class="filename">dataset portion of tutorial-config.yaml</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/patients.tsv&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">      </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sex&quot;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">      </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;age&quot;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nt">samples</span><span class="p">:</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/samples.tsv&quot;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient-id&quot;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span><span class="nt">freetext-anatomic-site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;anatomic-location&quot;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span><span class="nt">timepoint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;timepoint&quot;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="hll"><span class="w">  </span><span class="nt">timepoints</span><span class="p">:</span>
+</span></span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;baseline&quot;</span>
+</span></span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="hll"><span class="w">      </span><span class="nt">relative-order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span></span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="hll"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:timepoint.type/baseline&quot;</span>
+</span></span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eos&quot;</span>
+</span></span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="hll"><span class="w">      </span><span class="nt">relative-order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span></span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="hll"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:timepoint.type/eos&quot;</span>
+</span></span></code></pre></div>
+<p><em>Note</em>: we supply the <em>full</em> enum attribute name as a string, e.g. <code>":timepoint.type/baseline"</code>. Unlike
+with attributes that are property names (i.e. map keys), Unify does not infer namespace information or keyword vs string type for literals
+that are property values. But it will attempt to parse any string in value position starting with <code>":"</code> as a keyword.</p>
+<h3 id="mapping-in-measurementstsv">Mapping in measurements.tsv</h3>
+<p>Measurements, as captured by the <code>measurement</code> entity/namespace, is a very broad
+entity type in the Pattern and CANDEL schemas. In general, any molecular assay
+or measurement taken in a lab is a measurement. When we refer to the
+<a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/measurement.html">measurement schema</a> we can
+see a host of different measurement types available.</p>
+<p>You should think of measurements as duck typed, in that the kind of measurement
+represented is inferred from the attributes. Certain kinds of measurements have
+certain targets: proteomic assays target proteins, RNA-seq targets gene expression
+by way of transcript fragments, and so on. Most measurements are the result of
+an assay performed on a sample. UnifyBio's validator will ensure in the
+CLI <code>bin/validate</code> step that the combination of attributes on any measurement
+makes sense and corresponds to specs and expectations.</p>
+<p>In our case, we have a fairly straight forward RNA-seq assay to map in:</p>
+<table>
+<thead>
+<tr>
+<th>fpkm</th>
+<th>hugo</th>
+<th>sample</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>393.43107371469574</td>
+<td>SNORA24B</td>
+<td>sample-HIKIKDGG2</td>
+</tr>
+<tr>
+<td>203.42482862644985</td>
+<td>TCAF1P1</td>
+<td>sample-HIKIKDGG2</td>
+</tr>
+<tr>
+<td>965.3775593576936</td>
+<td>ARHGEF35-AS1</td>
+<td>sample-HIKIKDGG2</td>
+</tr>
+<tr>
+<td>320.0502226355575</td>
+<td>PCDH19</td>
+<td>sample-HIKIKDGG2</td>
+</tr>
+<tr>
+<td>486.5600564050051</td>
+<td>ANKRD49P1</td>
+<td>sample-HIKIKDGG2</td>
+</tr>
+</tbody>
+</table>
+<p>It might not be obvious to non-biologists, but the <code>hugo</code> columns refers to genes
+(through the indirection of <code>gene-product</code> entities in the Pattern schema), and
+we can see <code>:measurement/fpkm</code> in the measurement entity in the schema, which
+stands for <em>fragments per kilobase million</em>, i.e. a normalized metric for
+RNA transcript counts.</p>
+<div class="language-yaml highlight"><span class="filename">dataset porition of tutorial-config.edn</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/patients.tsv&quot;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">      </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sex&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">      </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;age&quot;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="nt">samples</span><span class="p">:</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/samples.tsv&quot;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">      </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient-id&quot;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">      </span><span class="nt">freetext-anatomic-site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;anatomic-location&quot;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">      </span><span class="nt">timepoint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;timepoint&quot;</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">  </span><span class="nt">timepoints</span><span class="p">:</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;baseline&quot;</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">      </span><span class="nt">relative-order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:timepoint.type/baseline&quot;</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eos&quot;</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">      </span><span class="nt">relative-order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:timepoint.type/eos&quot;</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="hll"><span class="w">  </span><span class="nt">assays</span><span class="p">:</span>
+</span></span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;RNAseq&quot;</span>
+</span></span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="hll"><span class="w">      </span><span class="nt">technology</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:assay.technology/RNA-seq&quot;</span>
+</span></span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="hll"><span class="w">      </span><span class="nt">measurement-sets</span><span class="p">:</span>
+</span></span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;standard</span><span class="nv"> </span><span class="s">fpkm&quot;</span>
+</span></span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="hll"><span class="w">          </span><span class="nt">measurements</span><span class="p">:</span>
+</span></span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/measurements.tsv&quot;</span>
+</span></span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="hll"><span class="w">              </span><span class="nt">sample</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sample&quot;</span>
+</span></span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="hll"><span class="w">              </span><span class="nt">fpkm</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;fpkm&quot;</span>
+</span></span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="hll"><span class="w">              </span><span class="nt">gene-product</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hugo&quot;</span>
+</span></span></code></pre></div>
+<p>A note on the tree structure: <code>:dataset/assays</code> contains all assays in a dataset, and
+for some datasets, like the one used in the <a href="https://www.nature.com/articles/s41591-022-01829-9">Prince Study</a>
+these can get quite large and detailed. Assays contain one or more measurement sets, which contain one
+or more measurement inputs, to provide groupings that might represent different experimental conditions,
+or different ways of processing data compuationally, etc. Sometimes these introduce derived entities,
+like <a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/cell-population.html">cell populations</a>
+grouped through flow cytometry, or
+<a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/single-cell.html">single cells</a>
+detected and separated through chemical or fluidic aspects of assays, or defined computationally through segmentation.</p>
+<p>Our case is pretty straightforward: we're referring to samples from elsewhere in our config,
+genes by names provided by the HGNC standard and already present as reference data.</p>
+<p>You'll note that as we've gone, also, we've built up the relational complexity of the dataset
+without doing a lot of work. For instance, each measurement is:</p>
+<ul>
+<li>a value or values representing an instrument reading in the real world, to which some
+  kind of data processing was applied.</li>
+<li>of a particular target, a known biological entity, which is a transcript (gene product) derived from a gene</li>
+<li>taken by a particular assay of a particular known technology type</li>
+<li>with certain processing and/or experimental conditions shared by other measurements
+  grouped into the same measurement set.</li>
+<li>of a sample that was derived<ul>
+<li>from a patient (subject)</li>
+<li>at a particular timepoint</li>
+</ul>
+</li>
+</ul>
+<p>Not every data model that uses UnifyBio's tool ecosystem or integrations, or every
+use of the Unify CLI for that matter, has to apply this sort of relational complexity.
+But this kind of relational complexity exists in many domains, and with minimal declarative effort,
+we are able to infer it from a combination of the structure of our data, and the details
+of our Unify schema and metamodel.</p>
+<h3 id="clinicaltsv">clinical.tsv</h3>
+<p>The last data we have to import is our clinical data. A view of it is below:</p>
+<table>
+<thead>
+<tr>
+<th>os</th>
+<th>patient</th>
+<th>timepoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>98</td>
+<td>subject-group-A-860</td>
+<td>eos</td>
+</tr>
+<tr>
+<td>39</td>
+<td>subject-group-B-478</td>
+<td>eos</td>
+</tr>
+<tr>
+<td>153</td>
+<td>subject-group-A-437</td>
+<td>eos</td>
+</tr>
+</tbody>
+</table>
+<p>We have the overall survival data (as os), an ID for our patients, and a timepoint.
+In this case, all the ref targets (timepoints and patients) have been supplied,
+so the mapping is straight forward. Here it is in the context of the
+entire (and now complete) import:</p>
+<div class="language-yaml highlight"><span class="filename">complete tutorial-config.edn</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">:unify/import</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some.user@gmail.com&quot;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">mappings</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mappings.yaml&quot;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-first-import&quot;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/patients.tsv&quot;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">      </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sex&quot;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">      </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;age&quot;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="nt">samples</span><span class="p">:</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/samples.tsv&quot;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;id&quot;</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">      </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient-id&quot;</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">      </span><span class="nt">freetext-anatomic-site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;anatomic-location&quot;</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">      </span><span class="nt">timepoint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;timepoint&quot;</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">  </span><span class="nt">timepoints</span><span class="p">:</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;baseline&quot;</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">      </span><span class="nt">relative-order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:timepoint.type/baseline&quot;</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eos&quot;</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">      </span><span class="nt">relative-order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:timepoint.type/eos&quot;</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">  </span><span class="nt">assays</span><span class="p">:</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;RNAseq&quot;</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">      </span><span class="nt">technology</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:assay.technology/RNA-seq&quot;</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">      </span><span class="nt">measurement-sets</span><span class="p">:</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;standard</span><span class="nv"> </span><span class="s">fpkm&quot;</span>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">          </span><span class="nt">measurements</span><span class="p">:</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/measurements.tsv&quot;</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">              </span><span class="nt">sample</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sample&quot;</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w">              </span><span class="nt">fpkm</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;fpkm&quot;</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="w">              </span><span class="nt">gene-product</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hugo&quot;</span>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="hll"><span class="w">  </span><span class="nt">clinical-observation-sets</span><span class="p">:</span>
+</span></span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;clinical</span><span class="nv"> </span><span class="s">observations&quot;</span>
+</span></span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="hll"><span class="w">      </span><span class="nt">clinical-observations</span><span class="p">:</span>
+</span></span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data/raw/clinical.tsv&quot;</span>
+</span></span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="hll"><span class="w">          </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient&quot;</span>
+</span></span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="hll"><span class="w">          </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;os&quot;</span>
+</span></span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="hll"><span class="w">          </span><span class="nt">timepoint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;timepoint&quot;</span>
+</span></span></code></pre></div>
+<p>You can refer to the <a href="http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/clinical-observation.html">clinical observations schema</a>
+to see what other information can be encoded in clinical observations. As present, they play a similar role to measurements,
+being typed implicitly through the presence or lack of certain attributes. Entities can be grouped arbitrarily within
+clinical observation sets, representing different sites, contexts within a study or other medical interactions, labs,
+and so on.</p>
+<h2 id="running-unify-cli-import-steps-with-your-dataset">Running Unify CLI import steps with your dataset</h2>
+<p>You can now run all the same steps you ran in the <a href="../quickstart/">quickstart</a> to transact your
+data into a database. Because this is a new, unique dataset, you can transact it either into
+an existing dev database you already created, or a new one. You should probably make sure it
+passes validations first, though, before you consider making it available to others!</p>
+<p>The steps are:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bin/unify prepare --import-config PATH/TO/example-import/tutorial-config.yaml --working-directory TEMP-DIR/tutorial-attempt-1
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>bin/unify request-db --database my-first-db
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>bin/unify transact --working-directory TEMP-DIR/tutorial-attempt-1 --database my-first-db
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>bin/unfy validate --database my-first-db
+</span></code></pre></div>
+<em>Note</em>: when you run validate without a <code>--dataset</code> arg, it defaults to the most recent dataset
+in the database.</p>
+<p>If your file contains typos or misaligned columns and attributes, you might encounter errors in
+a number of places:</p>
+<ul>
+<li>the config file may fail to parse with an error</li>
+<li>while data is being prepared, it might encounter an invalid data value or file vs. mapping situation,
+  e.g. a column specified in the config might not exist in the file.</li>
+<li>while transacting data, you might find that some values that are supposed to be unique
+  conflict with each other, or some reference data specified doesn't actually exist. E.g.
+  you might have a gene name that comes fom a different standard, or a different version of the HGNC standard even.</li>
+<li>while validating data, you might find that you created measurements with a nonsensical combination of
+  attributes, like a <code>:measurement/fpkm</code> attribute with a <code>:measurement/epitope</code> protein target. Or you
+  might find that you had a measurement that referred to sample a sample ID that didn't actually exist
+  in your sample table.</li>
+</ul>
+<p>Given these situations, it's completely normal and expected that you will hit hiccups and need to debug
+them. The Unify CLI tries to provide error messages that are as specific and direct as possible to
+make this as painless as possible. It can't magically provide the missing information from
+the bogus xslx file the vendor put in your Box folder, but it will do its best to identify
+any issues those sorts of things introduce.</p>
+<h2 id="further-steps">Further Steps</h2>
+<p>To see most of what's possible in a Unify import, refer to the
+<a href="https://github.com/vendekagon-labs/unify/blob/main/test/resources/systems/candel/template-dataset/config.yaml">template dataset</a>
+and the <a href="../../import-config/">import config docs</a>. In addition,
+RCRF intends to make several curated imports and datasets public. To learn more,
+<a href="https://rarecancer.org/initiatives">get in touch!</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

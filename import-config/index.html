@@ -1,0 +1,1368 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://unifybio.github.io/import-config/">
+      
+      
+        <link rel="prev" href="../unify-cli/">
+      
+      
+        <link rel="next" href="../schema/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Import Config - UnifyBio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#import-config" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UnifyBio" class="md-header__button md-logo" aria-label="UnifyBio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UnifyBio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Import Config
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UnifyBio" class="md-nav__button md-logo" aria-label="UnifyBio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UnifyBio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About UnifyBio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/first-import/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your First Import
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local System Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unify-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Unify CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Import Config
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Import Config
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#writing-import-config-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing import config files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing import config files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-json-schema-for-editor-assistance-with-yaml-config-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring JSON Schema for Editor Assistance with YAML config files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-config-file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      General config file structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literal data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-data-from-input-tsv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading data from input TSV files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading data from input TSV files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-attributes-standard-table-wide-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static attributes (standard table / wide format)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-attributes-molten-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic attributes (molten format)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-multiple-files-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing multiple files at once
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-missing-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dealing with missing values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-of-categorical-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping of categorical variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-fields-with-multiple-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data fields with multiple values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constant-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant values
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#writing-import-config-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing import config files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing import config files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-json-schema-for-editor-assistance-with-yaml-config-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring JSON Schema for Editor Assistance with YAML config files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-config-file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      General config file structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literal data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-data-from-input-tsv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading data from input TSV files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading data from input TSV files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-attributes-standard-table-wide-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static attributes (standard table / wide format)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-attributes-molten-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic attributes (molten format)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-multiple-files-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing multiple files at once
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-missing-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dealing with missing values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-of-categorical-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping of categorical variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-fields-with-multiple-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data fields with multiple values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constant-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant values
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="import-config">Import Config</h1>
+<p>An import config file specifies a mapping from ad hoc tables and their contents to
+a UnifyBio schema's data model.</p>
+<h2 id="writing-import-config-files">Writing import config files</h2>
+<p>The template dataset showcases most of the functionality of UnifyBio.
+The config file is available in both <a href="https://github.com/vendekagon-labs/unify/blob/main/test/resources/systems/candel/template-dataset/config.yaml">yaml</a>
+and <a href="https://github.com/vendekagon-labs/unify/blob/main/test/resources/systems/candel/template-dataset/config.edn">edn</a>
+forms. If you're new to UnifyBio, we recommend you start with yaml
+since Unify is able to generate JSON schema that editors can use to provide autocompletion and static analysis for
+import config files.</p>
+<h3 id="configuring-json-schema-for-editor-assistance-with-yaml-config-files">Configuring JSON Schema for Editor Assistance with YAML config files</h3>
+<p>If you are using the Pattern distribution, <code>pattern-import-config-schema.json</code> has been pre-generated and provided
+for you. If you are not, you can generate a JSON schema for your own Unify schema with:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bin/unify infer-json-schema --json-schema YOUR-FILE-NAME.json
+</span></code></pre></div>
+<p>Most editors support applying json schema to YAML files as you edit, we provide links for the docs and plugins on how to do so below:</p>
+<ul>
+<li>VSCode<ul>
+<li>RedHat <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML extension</a></li>
+<li>Go to settings (Code &gt; Settings &gt; Settings on Mac) and add a path to the JSON schema file under the key "yaml.schemas".<ul>
+<li>More detailed instructions <a href="https://dev.to/brpaz/how-to-create-your-own-auto-completion-for-json-and-yaml-files-on-vs-code-with-the-help-of-json-schema-k1i">here</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JetBrains products (e.g. IntelliJ, PyCharm, etc.)<ul>
+<li><a href="https://www.jetbrains.com/help/idea/yaml.html#select-schema-for-file">Method 1</a>: provide configuration via the JSON Schema Mappings setting.</li>
+<li><a href="https://www.jetbrains.com/help/idea/yaml.html#use-schema-keyword">Method 2</a>: annotate the YAML file with a path to the spec in a comment.</li>
+</ul>
+</li>
+</ul>
+<h2 id="general-config-file-structure">General config file structure</h2>
+<p>The nesting of the different objects in the config file mirrors
+the relationship between the corresponding entities in the database. The top level import section, for instance,
+contains information about the data import. Keys that begin with <code>unify/</code> (i.e., that are in the unify namespace)
+usually specify metadata about the import or directives (special commands or syntax) for performing transforms
+that require more than parsing a data literal in a TSV file into an expected type.</p>
+<p>Data that is not nested under the <code>dataset</code> entity is reference data, and refers to
+data from ontologies or standards, or other cases for which identifiers
+should always be valid across datasets. The following examples conform to the Pattern
+schema.</p>
+<div class="language-yaml highlight"><span class="filename">yaml import config structure</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">unify/import</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">assays</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">measurement-sets</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">measurements</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">samples</span><span class="p">:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">clinical-observations</span><span class="p">:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">treatment-regiments</span><span class="p">:</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">timepoints</span><span class="p">:</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">genomic-coordinate</span><span class="p">:</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nt">variant</span><span class="p">:</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">cnv</span><span class="p">:</span>
+</span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn import config structure</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="ss">:unify/import</span><span class="w"> </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="ss">:dataset</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="p">{</span><span class="ss">:assays</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p">[</span><span class="ss">:measurement-sets</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="p">[</span><span class="ss">:measurements</span><span class="p">]]}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="ss">:samples</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="ss">:subjects</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="ss">:clinical-observations</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="ss">:treatment-regimens</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="ss">:timepoints</span><span class="w"> </span><span class="p">[]}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w"> </span><span class="ss">:genomic-coordinate</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w"> </span><span class="ss">:variant</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w"> </span><span class="ss">:cnv</span><span class="w"> </span><span class="p">[]}</span>
+</span></code></pre></div>
+<h2 id="data-specifications">Data specifications</h2>
+<p>Now let's look into specific section to understand how data mapping with unify works. </p>
+<h3 id="literal-data">Literal data</h3>
+<p>The data below is literal data; it will be input into the database as is.
+The name of the dataset will be <code>template-dataset</code>, the doi will be <code>10.1126/science.aaa1348</code> etc.
+This is as opposed to data that is input from a file -- see below for many examples of this.</p>
+<div class="language-yaml highlight"><span class="filename">yaml dataset literal</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">dataset</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template-dataset</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Description</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">dataset,</span><span class="nv"> </span><span class="s">ie</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">paper,</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">clinical</span><span class="nv"> </span><span class="s">trial,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">conglomerate</span><span class="nv"> </span><span class="s">dataset&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">doi</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.1126/science.aaa1348&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://science.sciencemag.org/content/suppl/2015/03/11/science.aaa1348.DC1&quot;</span>
+</span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn dataset literal</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ss">:dataset</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w">         </span><span class="s">&quot;template-dataset&quot;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">          </span><span class="ss">:description</span><span class="w">  </span><span class="s">&quot;Description of your dataset, ie title of paper, title of clinical trial, or description of conglomerate dataset&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">          </span><span class="ss">:doi</span><span class="w">          </span><span class="s">&quot;10.1126/science.aaa1348&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">          </span><span class="ss">:url</span><span class="w">          </span><span class="s">&quot;http://science.sciencemag.org/content/suppl/2015/03/11/science.aaa1348.DC1&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="loading-data-from-input-tsv-files">Loading data from input TSV files</h3>
+<p>To load data from input files (which must be in TSV format), we use the <code>:unify/input-tsv-file</code> key (see below).
+Note that the input file path is relative to the <code>config.edn</code> or <code>config.yaml</code> file location.</p>
+<h4 id="static-attributes-standard-table-wide-format">Static attributes (standard table / wide format)</h4>
+<p>This is the simplest type of data. Each column correspond to an attribute and each row to an entity.
+The mappings between columns in the original data and attributes in Unify are specified as follows:</p>
+<div class="language-yaml highlight"><span class="filename">yaml measurements file directive</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">measurements</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;processed/nanostring.txt&#39;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">gene-product</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">variable</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">sample</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">nanosring-count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+</span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn measurements file directive</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ss">:measurements</span><span class="w"> </span><span class="p">[{</span><span class="ss">:unify/input-tsv-file</span><span class="w">  </span><span class="s">&quot;processed/nanostring.txt&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">                </span><span class="ss">:gene-product</span><span class="w">     </span><span class="s">&quot;variable&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">                </span><span class="ss">:sample</span><span class="w">           </span><span class="s">&quot;sample&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">                </span><span class="ss">:nanostring-count</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">}]</span>
+</span></code></pre></div>
+<p>This is what the corresponding <code>nanostring.txt</code> file looks like:</p>
+<table>
+<thead>
+<tr>
+<th>sample</th>
+<th>variable</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCGA-06-5416-01A-01D-1486-08</td>
+<td>ACO2</td>
+<td>9.795</td>
+</tr>
+<tr>
+<td>TCGA-06-5416-01A-01D-1486-08</td>
+<td>ACTB</td>
+<td>15.25</td>
+</tr>
+<tr>
+<td>TCGA-06-5416-01A-01D-1486-08</td>
+<td>ACVR1C</td>
+<td>5.603</td>
+</tr>
+<tr>
+<td>TCGA-06-5416-01A-01D-1486-08</td>
+<td>ACVR2A</td>
+<td>7.545</td>
+</tr>
+<tr>
+<td>TCGA-06-5416-01A-01D-1486-08</td>
+<td>ACVR2B</td>
+<td>6.173</td>
+</tr>
+<tr>
+<td>TCGA-06-5416-01A-01D-1486-08</td>
+<td>ADA</td>
+<td>6.532</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynamic-attributes-molten-format">Dynamic attributes (molten format)</h4>
+<p>When data is in a melted or similar sparse format there will be a column in the output file
+that specifies the attribute type of each row, and another column with the actual value
+(i.e. similar to the output of the <code>melt</code> function in the <code>reshape</code> R package or 
+melt in the Python pandas package.). Molten data can be imported using the special
+form below. Note that as is often the case, this contains a mixture of wide and molten data.</p>
+<p>The molten import syntax is demonstrated in the highlighted code block examples below.
+The column specified by <code>unify/variable</code> contains the attribute name, and the column
+specified by <code>unify/value</code> indicates which column contains the value that corresponds
+to said attribute. The mapping in <code>unify/variables</code> specifies how each variable name
+that appears in the file maps into the Unify schema. E.g., the variable <code>t.depth</code>
+corresponds to the measurement attribute <code>:measurement/t-depth</code>.</p>
+<div class="language-yaml highlight"><span class="filename">yaml dynamic attributes</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">measurements</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;processed/variant_measurements.txt&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">sample</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sample.id&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">variant</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;var.id&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="hll"><span class="w">    </span><span class="nt">unify/variable</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;variable&quot;</span>
+</span></span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="hll"><span class="w">    </span><span class="nt">unify/value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;value&quot;</span>
+</span></span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="hll"><span class="w">    </span><span class="nt">unify/variables</span><span class="p">:</span>
+</span></span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="hll"><span class="w">      </span><span class="nt">t.depth</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:measurement/t-depth&quot;</span>
+</span></span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="hll"><span class="w">      </span><span class="nt">n.depth</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:measurement/n-depth&quot;</span>
+</span></span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="hll"><span class="w">      </span><span class="nt">vaf</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:measurement/vaf&quot;</span>
+</span></span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn dynamic attributes</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="ss">:measurements</span><span class="w"> </span><span class="p">[{</span><span class="ss">:unify/input-tsv-file</span><span class="w"> </span><span class="s">&quot;processed/variant_measurements.txt&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">                </span><span class="ss">:sample</span><span class="w">               </span><span class="s">&quot;sample.id&quot;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">                </span><span class="ss">:variant</span><span class="w">              </span><span class="s">&quot;var.id&quot;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="hll"><span class="w">                </span><span class="ss">:unify/variable</span><span class="w">       </span><span class="s">&quot;variable&quot;</span>
+</span></span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="hll"><span class="w">                </span><span class="ss">:unify/value</span><span class="w">          </span><span class="s">&quot;value&quot;</span>
+</span></span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="hll"><span class="w">                </span><span class="ss">:unify/variables</span><span class="w">      </span><span class="p">{</span><span class="s">&quot;t.depth&quot;</span><span class="w"> </span><span class="ss">:measurement/t-depth</span>
+</span></span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="hll"><span class="w">                                       </span><span class="s">&quot;n.depth&quot;</span><span class="w"> </span><span class="ss">:measurement/n-depth</span>
+</span></span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="hll"><span class="w">                                       </span><span class="s">&quot;vaf&quot;</span><span class="w">     </span><span class="ss">:measurement/vaf</span><span class="p">}}]}</span>
+</span></span></code></pre></div>
+<p>For reference, this is what the corresponding <code>variant_measurements.txt</code> file looks like</p>
+<table>
+<thead>
+<tr>
+<th>sample.id</th>
+<th>var.id</th>
+<th>variable</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AL4602_T</td>
+<td>GRCh38:chr1:+:27023633:27023633/G/A</td>
+<td>n.depth</td>
+<td>11</td>
+</tr>
+<tr>
+<td>AL4602_T</td>
+<td>GRCh38:chr1:+:159898129:159898129/G/A</td>
+<td>n.depth</td>
+<td>32</td>
+</tr>
+<tr>
+<td>AL4602_T</td>
+<td>GRCh38:chr1:+:237024557:237024557/G/T</td>
+<td>n.depth</td>
+<td>158</td>
+</tr>
+<tr>
+<td>MA7027_T</td>
+<td>GRCh38:chr9:+:101797386:101797386/G/A</td>
+<td>t.depth</td>
+<td>144</td>
+</tr>
+<tr>
+<td>MA7027_T</td>
+<td>GRCh38:chr9:+:130213074:130213074/C/A</td>
+<td>t.depth</td>
+<td>10</td>
+</tr>
+<tr>
+<td>MA7027_T</td>
+<td>GRCh38:chr9:+:131587312:131587312/T/A</td>
+<td>t.depth</td>
+<td>9</td>
+</tr>
+<tr>
+<td>FR9547_T</td>
+<td>GRCh38:chr2:+:103090441:103090441/C/A</td>
+<td>vaf</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>FR9547_T</td>
+<td>GRCh38:chr2:+:172967053:172967053/G/T</td>
+<td>vaf</td>
+<td>0.23</td>
+</tr>
+<tr>
+<td>FR9547_T</td>
+<td>GRCh38:chr2:+:207176120:207176120/C/T</td>
+<td>vaf</td>
+<td>0.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="processing-multiple-files-at-once">Processing multiple files at once</h4>
+<p>You can use a series of files as input if you specify them as a glob. The example below would process each file matching the regular expression</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">measurements</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input-tsv-file</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">unify.glob/directory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;processed/&quot;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">unify.glob/pattern</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;variant_meas_*.tsv&quot;</span>
+</span></code></pre></div>
+<div class="language-clojure highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">measurements</span><span class="w"> </span><span class="p">[{</span><span class="ss">:unify/input-tsv-file</span><span class="w"> </span><span class="o">#</span><span class="nv">glob</span><span class="p">[</span><span class="s">&quot;processed/&quot;</span><span class="w"> </span><span class="s">&quot;variant_meas_*.tsv&quot;</span><span class="p">]}]</span>
+</span></code></pre></div>
+<h2 id="dealing-with-missing-values">Dealing with missing values</h2>
+<p>The <code>:unify/na</code> key tells unify what to treat as NA in the input file.
+Attributes containing a value specified as <code>na</code> will be ignored and not input into the database.
+The <code>:unify/omit-if-na</code> lists a set of attributes that will cause the entire entity to be omitted
+if any of these attributes is NA. This is usually applicable to measurements.</p>
+<div class="language-yaml highlight"><span class="filename">yaml NA example</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">measurements</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;processed/variant_meas_1.tsv&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="hll"><span class="w">    </span><span class="nt">unify/na</span><span class="p">:</span>
+</span></span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+</span></span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NA&quot;</span>
+</span></span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="hll"><span class="w">    </span><span class="nt">unify/omit-if-na</span><span class="p">:</span>
+</span></span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="hll"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;:measurement/t-ref-count&quot;</span>
+</span></span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="hll"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;:measurement/t-alt-count&quot;</span>
+</span></span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nt">sample</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tumor_Sample_Barcode</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="nt">variant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">var.id</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="nt">unify/variable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">variable</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="nt">unify/value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span><span class="nt">unify/variables</span><span class="p">:</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">      </span><span class="nt">t_ref_count</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:measurement/t-ref-count&quot;</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">      </span><span class="nt">t_alt_count</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:measurement/t-alt-count&quot;</span>
+</span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn NA example</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="ss">:measurements</span><span class="w"> </span><span class="p">[{</span><span class="ss">:unify/input-tsv-file</span><span class="w"> </span><span class="s">&quot;processed/variant_meas_1.tsv&quot;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="hll"><span class="w">                </span><span class="ss">:unify/na</span><span class="w">         </span><span class="s">&quot;&quot;</span>
+</span></span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="hll"><span class="w">                </span><span class="ss">:unify/omit-if-na</span><span class="w"> </span><span class="p">[</span><span class="ss">:measurement/t-ref-count</span>
+</span></span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="hll"><span class="w">                                  </span><span class="ss">:measurement/t-alt-count</span><span class="p">]</span>
+</span></span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">                </span><span class="ss">:sample</span><span class="w">          </span><span class="s">&quot;Tumor_Sample_Barcode&quot;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">                </span><span class="ss">:variant</span><span class="w">          </span><span class="s">&quot;var.id&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">                </span><span class="ss">:unify/variable</span><span class="w">    </span><span class="s">&quot;variable&quot;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">                </span><span class="ss">:unify/value</span><span class="w">       </span><span class="s">&quot;value&quot;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">                </span><span class="ss">:unify/variables</span><span class="w">  </span><span class="p">{</span><span class="s">&quot;t_ref_count&quot;</span><span class="w"> </span><span class="ss">:measurement/t-ref-count</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">                                   </span><span class="s">&quot;t_alt_count&quot;</span><span class="w"> </span><span class="ss">:measurement/t-alt-count</span><span class="p">}}]</span>
+</span></code></pre></div>
+<p>Below is what the corresponding data files looks like. </p>
+<p>As you can see the 4th row is missing a value. Becuase of the usage of <code>:unify/omit-if-na</code> the entity generated by this row will be discarded.
+If you had not used <code>:unify/omit-if-na</code> this would have generated a measurement entity with <code>:measuremnent/sample</code> and <code>:measurement/variant</code> attributes, but no value.
+This is an invalid entity and would have failed validation</p>
+<table>
+<thead>
+<tr>
+<th>Tumor_Sample_Barcode</th>
+<th>var.id</th>
+<th>variable</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCGA-WB-A814-01A-11D-A35I-08</td>
+<td>GRCh38:chr1:+:19232629:19232629/C/T</td>
+<td>t_ref_count</td>
+<td>77</td>
+</tr>
+<tr>
+<td>TCGA-WB-A814-01A-11D-A35I-08</td>
+<td>GRCh38:chr1:+:91708723:91708723/G/A</td>
+<td>t_ref_count</td>
+<td>45</td>
+</tr>
+<tr>
+<td>TCGA-WB-A814-01A-11D-A35I-08</td>
+<td>GRCh38:chr2:+:46380261:46380261/C/T</td>
+<td>t_ref_count</td>
+<td>81</td>
+</tr>
+<tr>
+<td>TCGA-WB-A814-01A-11D-A35I-08</td>
+<td>GRCh38:chr1:+:19232629:19232629/C/T</td>
+<td>t_alt_count</td>
+<td></td>
+</tr>
+<tr>
+<td>TCGA-WB-A814-01A-11D-A35I-08</td>
+<td>GRCh38:chr1:+:91708723:91708723/G/A</td>
+<td>t_alt_count</td>
+<td>11</td>
+</tr>
+<tr>
+<td>TCGA-WB-A814-01A-11D-A35I-08</td>
+<td>GRCh38:chr2:+:46380261:46380261/C/T</td>
+<td>t_alt_count</td>
+<td>37</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mapping-of-categorical-variables">Mapping of categorical variables</h2>
+<p>Most categorical attributes are represented in the database as enums as opposed to string (e.g. sex is represented by the enums <code>:sex/female</code> and <code>:sex/male</code>).
+The <code>mappings.edn</code> or <code>mappings.yaml</code> file (specified in the config in <code>[:unify/import :mappings]</code>)
+dictates how unify will map string values from TSV files in your data to enums. The following snippet is an example from the template dataset:</p>
+<p>The <code>:unify/mappings</code> section of the file defines a set of mappings.
+The left side is the name of the mapping and these names can be re-used in mappings files.
+The right side defines the mapping, where the keys are valid data literals or enums in the schema, and the right is
+a vector (or array or list) of string values that remap to the key.
+The <code>:unify/variables</code> top level key in the file specifies which attributes (keys)
+each of the provided mappings (values) will apply to.</p>
+<div class="language-yaml highlight"><span class="filename">yaml mappings example</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">unify/mappings</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">enum/metastasis</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">true</span><span class="p">:</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Met&quot;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;T&quot;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nt">false</span><span class="p">:</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Primary&quot;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;N/A&quot;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;F&quot;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="nt">enum/sex</span><span class="p">:</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nt">sex/female</span><span class="p">:</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;F&quot;</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="nt">sex/male</span><span class="p">:</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;M&quot;</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="nt">unify/variables</span><span class="p">:</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">  </span><span class="nt">sample/metastasis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;enum/metastasis&quot;</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">  </span><span class="nt">subject/sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;enum/sex&quot;</span>
+</span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn mappings example</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="ss">:unify/mappings</span><span class="w"> </span><span class="p">{</span><span class="ss">:enum/metastasis</span><span class="w"> </span><span class="p">{</span><span class="nv">true</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Met&quot;</span><span class="w"> </span><span class="s">&quot;T&quot;</span><span class="p">]</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">                                    </span><span class="nv">false</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Primary&quot;</span><span class="w"> </span><span class="s">&quot;N/A&quot;</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">]}</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">                  </span><span class="ss">:enum/sex</span><span class="w"> </span><span class="p">{</span><span class="ss">:sex/female</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;F&quot;</span><span class="p">]</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">                             </span><span class="ss">:sex/male</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;M&quot;</span><span class="p">]}}</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w"> </span><span class="ss">:unify/variables</span><span class="w"> </span><span class="p">{</span><span class="ss">:sample/metastasis</span><span class="w"> </span><span class="ss">:enum/metastasis</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">                   </span><span class="ss">:subject/sex</span><span class="w"> </span><span class="ss">:enum/sex</span><span class="p">}}</span>
+</span></code></pre></div>
+<h2 id="reverse-references">Reverse references</h2>
+<p>In some cases you may have to specify a reference between two entities <code>A -&gt; B</code> but the entity type B does not have a unique identifier while A does.
+The only part of the schema where this currently happens is when you are specifying therapies for subjects.
+Subjects refer to therapies but, while subjects have an id, therapies do not. To handle such cases unify
+provides the option to specify references in reverse.</p>
+<p><code>:unify/rev-variable</code> specifies which column in the therapies file (<code>subject.id</code> in this case) refers back to the subject id in the subject file.
+<code>:unify/rev-attr</code> specifies which attribute in the parent entity (i.e. the subject) this reference should be attached to (<code>:subject/therapies</code> in this case).</p>
+<div class="language-yaml highlight"><span class="filename">yaml reverse ref example</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;processed/rizvi-subjects.txt&quot;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;subject.id&quot;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gender</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">meddra-disease</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">disease</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">smoker</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smoker</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nt">therapies</span><span class="p">:</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;processed/rizvi-therapies.txt&quot;</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">      </span><span class="nt">treatment-regimen</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;regimen&quot;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">      </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;line&quot;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="hll"><span class="w">      </span><span class="nt">unify/reverse</span><span class="p">:</span>
+</span></span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="hll"><span class="w">        </span><span class="nt">unify/rev-variable</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;subject.id&quot;</span>
+</span></span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="hll"><span class="w">        </span><span class="nt">unify/rev-attr</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:subject/therapies&quot;</span>
+</span></span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn reverse ref example</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="ss">:subjects</span><span class="w"> </span><span class="p">[{</span><span class="ss">:unify/input-tsv-file</span><span class="w"> </span><span class="s">&quot;processed/rizvi-subjects.txt&quot;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">            </span><span class="ss">:id</span><span class="w">              </span><span class="s">&quot;subject.id&quot;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">            </span><span class="ss">:sex</span><span class="w">             </span><span class="s">&quot;gender&quot;</span><span class="w">   </span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">            </span><span class="ss">:meddra-disease</span><span class="w">  </span><span class="s">&quot;disease&quot;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">            </span><span class="ss">:smoker</span><span class="w">          </span><span class="s">&quot;smoker&quot;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">            </span><span class="ss">:therapies</span><span class="w">       </span><span class="p">{</span><span class="ss">:unify/input-tsv-file</span><span class="w">   </span><span class="s">&quot;processed/rizvi-therapies.txt&quot;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">                              </span><span class="ss">:treatment-regimen</span><span class="w"> </span><span class="s">&quot;regimen&quot;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">                              </span><span class="ss">:line</span><span class="w">              </span><span class="s">&quot;line&quot;</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="hll"><span class="w">                              </span><span class="ss">:unify/reverse</span><span class="w">      </span><span class="p">{</span><span class="ss">:unify/rev-variable</span><span class="w"> </span><span class="s">&quot;subject.id&quot;</span>
+</span></span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="hll"><span class="w">                                                   </span><span class="ss">:unify/rev-attr</span><span class="w">     </span><span class="ss">:subject/therapies</span><span class="p">}}}</span>
+</span></span></code></pre></div>
+<p>This is what the subjects file looks like:</p>
+<table>
+<thead>
+<tr>
+<th>subject.id</th>
+<th>disease</th>
+<th>gender</th>
+<th>smoker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AL4602</td>
+<td>Lung adenocarcinoma</td>
+<td>M</td>
+<td>Former</td>
+</tr>
+<tr>
+<td>AU5884</td>
+<td>Lung adenocarcinoma</td>
+<td>M</td>
+<td>Former</td>
+</tr>
+<tr>
+<td>BL3403</td>
+<td>Lung adenocarcinoma</td>
+<td>F</td>
+<td>Former</td>
+</tr>
+<tr>
+<td>CA9903</td>
+<td>Lung adenocarcinoma</td>
+<td>M</td>
+<td>Former</td>
+</tr>
+</tbody>
+</table>
+<p>and this is the therapies file</p>
+<table>
+<thead>
+<tr>
+<th>subject.id</th>
+<th>line</th>
+<th>regimen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AL4602</td>
+<td>1</td>
+<td>Pembrolizumab-3wk</td>
+</tr>
+<tr>
+<td>AU5884</td>
+<td>3</td>
+<td>Pembrolizumab-2wk</td>
+</tr>
+<tr>
+<td>BL3403</td>
+<td>2</td>
+<td>Pembrolizumab-2wk</td>
+</tr>
+<tr>
+<td>CA9903</td>
+<td>4</td>
+<td>Pembrolizumab-3wk</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-fields-with-multiple-values">Data fields with multiple values</h2>
+<p>If your data has multiple values for an attribute in a single cell of the input table, you can tell unify
+to split the content of the cell into individual values. For instance in the following example we have a single
+<code>Genes</code> column that contains multiple genes separated by <code>;</code>. <code>:cnv/genes</code> is a cardinality-many attribute,
+and therefore the set of genes in each cell will all be associated with a single entity.</p>
+<p>This snippet shows how to direct Unify to handle these cases:</p>
+<div class="language-yaml highlight"><span class="filename">yaml multiple value example</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">cnv</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">unify/input-tsv-file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;processed/cnv_ref_3.tsv&quot;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">genomic-coordinates</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gc.id&quot;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gc.id&quot;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nt">genes</span><span class="p">:</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="hll"><span class="w">      </span><span class="nt">unify/many-delimiter</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;;&quot;</span>
+</span></span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="hll"><span class="w">      </span><span class="nt">unify/many-variable</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Genes&quot;</span>
+</span></span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn multiple value example</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="ss">:cnv</span><span class="w"> </span><span class="p">{</span><span class="ss">:unify/input-tsv-file</span><span class="w"> </span><span class="s">&quot;processed/cnv_ref_3.tsv&quot;</span><span class="p">]</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">      </span><span class="ss">:genomic-coordinates</span><span class="w"> </span><span class="s">&quot;gc.id&quot;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">      </span><span class="ss">:id</span><span class="w">  </span><span class="s">&quot;gc.id&quot;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="hll"><span class="w">      </span><span class="ss">:genes</span><span class="w"> </span><span class="p">{</span><span class="ss">:unif/many-delimiter</span><span class="w"> </span><span class="s">&quot;;&quot;</span>
+</span></span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="hll"><span class="w">              </span><span class="ss">:unif/many-variable</span><span class="w"> </span><span class="s">&quot;Genes&quot;</span><span class="p">}}</span>
+</span></span></code></pre></div>
+<p>This is what the corresponding data table looks like</p>
+<table>
+<thead>
+<tr>
+<th>gc.id</th>
+<th>Genes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GRCh38:1:+:74450881:74911796</td>
+<td>CRYZ;ERICH3;ERICH3-AS1;TYW3</td>
+</tr>
+<tr>
+<td>GRCh38:2:+:120251789:120441226</td>
+<td>INHBB;RALB</td>
+</tr>
+<tr>
+<td>GRCh38:2:+:125852095:126987310</td>
+<td>GYPC;LINC01941;TEX51</td>
+</tr>
+</tbody>
+</table>
+<h2 id="constant-values">Constant values</h2>
+<p>You can use the <code>:unify/constants</code> directive to specify values that you want to be constant across all the entities in a file.
+For instance in the following example all the measurements entity generated by pret will have a <code>:measurement/epitope</code> attribute with value <code>LDHA</code>.</p>
+<div class="language-yaml highlight"><span class="filename">yaml constants example</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="l l-Scalar l-Scalar-Plain">:measurements</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">- unify/input-tsv-file</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;processed/ldh_meas_and_samples.txt&quot;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">sample</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sample.id&quot;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">measurement/ng-mL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LDH</span><span class="nv"> </span><span class="s">@</span><span class="nv"> </span><span class="s">Baseline&quot;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="hll"><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">unify/constants</span>
+</span></span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="hll"><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">- measurement/epitope</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;LDHA&quot;</span>
+</span></span></code></pre></div>
+<div class="language-clojure highlight"><span class="filename">edn constants example</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="ss">:measurements</span><span class="w"> </span><span class="p">{</span><span class="ss">:unif/input-tsv-file</span><span class="w">   </span><span class="s">&quot;processed/ldh_meas_and_samples.txt&quot;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">               </span><span class="ss">:sample</span><span class="w">                </span><span class="s">&quot;sample.id&quot;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">               </span><span class="ss">:measurement/ng-mL</span><span class="w">     </span><span class="s">&quot;LDH @ Baseline&quot;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="hll"><span class="w">               </span><span class="ss">:unif/constants</span><span class="w">        </span><span class="p">{</span><span class="ss">:measurement/epitope</span><span class="w"> </span><span class="s">&quot;LDHA&quot;</span><span class="p">}}}]}</span>
+</span></span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
