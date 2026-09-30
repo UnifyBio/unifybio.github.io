@@ -103,14 +103,6 @@ bin/validate --database my-first-db --dataset "my-first-import"
 
 Without `--dataset`, it defaults to the most recent dataset in the database.
 
-### retract
-
-Removes a dataset from a database: `--dataset` names the dataset to retract from `--database`.
-
-```
-bin/unify retract --database my-first-db --dataset "my-first-import"
-```
-
 ### list-dbs and delete-db
 
 `list-dbs` lists the current databases. `delete-db` deletes the database named by `--database`.
@@ -134,12 +126,12 @@ The inference tasks are in early alpha, and their output should be reviewed.
 
 | Option | Used by | Description |
 |---|---|---|
-| `--database NAME` | `request-db`, `transact`, `retract`, `delete-db`, `validate` | The database to run against. |
+| `--database NAME` | `request-db`, `transact`, `delete-db`, `validate` | The database to run against. |
 | `--import-config FILE` | `prepare` | Import config file, YAML or edn. |
 | `--working-directory DIR` | `prepare`, `transact` | Where `prepare` writes its output, and where `transact` reads it from. |
 | `--schema-directory DIR` | `request-db`, `prepare`, schema tasks | Directory containing the Unify schema (Datomic schema plus metamodel annotations). |
 | `--seed-data-directory DIR` | `request-db` | Reference data to load when the database is created. |
-| `--dataset NAME` | `retract`, `validate` | The dataset to retract, or to validate. |
+| `--dataset NAME` | `validate` | The dataset to validate. |
 | `--unify-schema FILE` | `compile-schema`, `infer-schema` | An edn file containing a Unify schema definition. |
 | `--metaschema FILE` | `infer-metaschema` | Output file for the Datomic analytics metaschema. |
 | `--json-schema FILE` | `infer-json-schema` | Output file for the import config JSON schema. |
@@ -166,4 +158,4 @@ For a config with many problems, run `prepare` with `--continue-on-error` to see
 for inactivity on a hosted system). Use `list-dbs` to check.
 
 **Starting over.** To redo an import from scratch, use a new `--working-directory` (or empty the old one),
-and either `retract` the dataset from the database or delete the database and `request-db` a fresh one.
+and delete the database and `request-db` a fresh one.
