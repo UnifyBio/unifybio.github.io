@@ -1,8 +1,8 @@
 # Quickstart
 
-This section contains step by step instructions to import the template dataset, an example dataset constructed from multiple
+This section contains step-by-step instructions to import the template dataset, an example dataset constructed from multiple
 public data sources that exercises a large surface area of Unify's import functionality. Running these steps will help you
-make sure that everything is setup correctly on your system and also provide an overall view of the process
+make sure that everything is set up correctly on your system and also provide an overall view of the process.
 
 ## Setup
 
@@ -79,7 +79,7 @@ Before we can transact data, we need a database to transact it into. For this qu
 request a dev database from the local UnifyBio system:
 
 ```
-bin/unify request-db --database YOUR-DB-NAME"
+bin/unify request-db --database YOUR-DB-NAME
 ```
 
 This will create a new Datomic database in your local system. In most UnifyBio workflows,
@@ -133,7 +133,7 @@ You can optionally include a second arg to `local-test-query.py` that contains a
 a JSON file containing a query request body.
 While covering the possible contents and [query language](https://docs.datomic.com/query/query-data-reference.html)
 are outside the scope of
-this tutorial, you can inspect the conents of the Python script, consult some of the
+this tutorial, you can inspect the contents of the Python script, consult some of the
 [examples](https://github.com/vendekagon-labs/datomic-query-service/blob/main/resources/example-q.json)
 in the query service repo, and use the
 [live schema browser](http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/index.html)

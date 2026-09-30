@@ -5,13 +5,13 @@ The core of UnifyBio's functionality is built around
 [Unify](https://github.com/vendekagon-labs/unify/), a domain and schema agnostic tool
 for data-driven ETL, focused around harmonizing scientific data into a hybrid distributed
 data system, consisting of one or many
-[Datomic]() databases and an object store such as
+[Datomic](https://www.datomic.com/) databases and an object store such as
 [Amazon s3](https://aws.amazon.com/s3/).
 
 UnifyBio is a set of libraries, schemas, and various tools that make use of the Unify CLI
 and its schema annotations, as well as common conventions for biological data,
 in order to harmonize disparate data into common data models, store data in granular
-time pronvenaced storage, and to provide data consistency and quality checks.
+time provenanced storage, and to provide data consistency and quality checks.
 UnifyBio also provides an ecosystem of downstream access and analysis tools that enable
 integrations with and exports to a variety of systems, both fulfilling and going
 beyond [FAIR Principles](https://www.nature.com/articles/sdata201618). 
@@ -41,7 +41,7 @@ Datomic databases, and most UnifyBio workflows expect multiple databases, possib
 containing multiple versions of datasets, with a central database which indexes
 and tracks dataset states and readiness. Most of UnifyBio's
 affordances re: granular time provenance, sparse representations,
-and arbitrarily accessible data are architecture properties
+and arbitrarily accessible data are architectural properties
 hoisted through its use of Datomic.
 
 ### Unify schema
@@ -74,7 +74,7 @@ See the metamodel section of the [schema docs](schema.md) for more details.
 
 The Unify CLI expects that all data being batch imported is modeled within the framework of a dataset.
 I.e., that subjects, assays, samples, clinical observations, etc. are all part of a particular dataset.
-This does not necessarily constraint downstream tooling (e.g. a query can look at all subjects, not just
+This does not necessarily constrain downstream tooling (e.g. a query can look at all subjects, not just
 all subjects for a dataset) but does structure imports and import config files. See the
 [Import Config](import-config.md) docs for more information.
 
@@ -83,24 +83,24 @@ all subjects for a dataset) but does structure imports and import config files. 
 The Unify data model specifies that some of the contents of the database are Reference Data. Reference
 data consists of standard identifiers, controlled vocabularies, ontologies, and so on. It also refers
 to common conventions that can be used to uniquely and globally identify things like the biological
-entities that measurements are intended to target, even when not exhausitvely modeled in the data,
+entities that measurements are intended to target, even when not exhaustively modeled in the data,
 such as variants and genomic coordinates. Some reference data can be imported with the
 Unify CLI via special forms in the import config, more information about reference data can be found
 in the [schema docs](schema.md).
 
 ### Seed Data
 
-Seed data refers to the the portion of reference data which is bulk loaded into UnifyBio databases
-on creation. Due to CANDEL terminology priors, this is sometimes referred to as bootsrap data.
+Seed data refers to the portion of reference data which is bulk loaded into UnifyBio databases
+on creation. Due to CANDEL terminology priors, this is sometimes referred to as bootstrap data.
 This is usually data from a standards provider, e.g. genes and gene products from HGNC and
 proteins and epitopes from UniProt. Every UnifyBio distribution should provide seed data
 (or e.g. scripts for downloading seed data) as part of their software distribution.
 
 ### Import Config Files
 
-An import config file specifies the mapping from the conents of several data files (e.g.
+An import config file specifies the mapping from the contents of several data files (e.g.
 the ad hoc schema implied by a TSV file's column names) into the particular UnifyBio system's
-schema. Import config files are specified in detail in the [import config][import-config.md] docs.
+schema. Import config files are specified in detail in the [import config](import-config.md) docs.
 
 ### Working Directory
 

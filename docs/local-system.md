@@ -7,7 +7,7 @@ UnifyBio provides two local system configuration options.
 
 ## Local System Management with Docker Compose
 
-By convention, software distrubtions that contain UnifyBio tools ship
+By convention, software distributions that contain UnifyBio tools ship
 with a local docker compose system that consists of:
 
 - a [Postgres database](https://www.postgresql.org/), which acts as Datomic's underlying storage.
@@ -32,14 +32,14 @@ bin/start-local-system
 ```
 
 To start a local system. _Note_: while this script is typically provided as a convenience,
-all that is stricly necessary is to navigate the directory which contains the
+all that is strictly necessary is to navigate to the directory which contains the
 `docker-compose.yml` file and run `docker-compose up`.
 
 
 ## Local System Management through JVM process management
 
-While containerization provides user convienence, it also results in operational
-complexity that is not stricly necessary for use.
+While containerization provides user convenience, it also results in operational
+complexity that is not strictly necessary for use.
 UnifyBio is tested and supports use with JVM 21+ conforming
 distributions of
 [temurin](https://adoptium.net/temurin/releases/),

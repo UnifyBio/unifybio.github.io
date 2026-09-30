@@ -1,7 +1,7 @@
 # Your First Import
 
 This tutorial takes you through the process of creating, then importing your own
-minimal UnifyBio dataset. Before attempting to these steps, make sure you have a
+minimal UnifyBio dataset. Before attempting these steps, make sure you have a
 local environment capable of completing all the steps in the [quickstart](quickstart.md).
 
 The import we walk through is the synthetic `example-import` included in the
@@ -54,8 +54,8 @@ You will also typically see:
 The present version of the Unify CLI can only process TSV files for input. Unify uses tab-separated files
 to avoid any of the ambiguities and problems that occur with arbitrarily delimited files, given that
 compact and obscure data encodings and fulltext natural language sentences and similar are often 
-imported and harmonized into clinical and molecular dataset. The TSV files do not need to
-correspond to any particular data model, but there should be a column to column mappings to attributes
+imported and harmonized into clinical and molecular datasets. The TSV files do not need to
+correspond to any particular data model, but there should be column to column mappings to attributes
 in the schema.
 
 ## Creating an Import Config
@@ -85,7 +85,7 @@ dataset:
 The Unify CLI can generate a JSON Schema you can apply to your YAML editing process in
 order to provide static checks on the structure and content of the import, as well as
 to provide autocomplete, attribute documentation, and more. If you are using the Pattern UnifyBio distribution,
-this has been pregenerated for you and can be found under the distribution directry
+this has been pregenerated for you and can be found under the distribution directory
 as the file `candel-import-config-schema.json`. If you need to generate it, you can do so
 with this CLI command:
 
@@ -145,7 +145,7 @@ use freetext instead of mapping the terms into an ontology.)
 
 In its simplest form, the yaml config file is just a literal translation of the
 mapping from columns to attributes that we just identified. The required update
-has been higlighted for you in the snippet below:
+has been highlighted for you in the snippet below:
 
 ```yaml title="tutorial-config.yaml" hl_lines="5-10"
 unify/import:
@@ -202,10 +202,10 @@ unify/variables:
 This mapping lets Unify know that when it encounters literals like "M" or "Male" they should be
 mapped to `:subject.sex/male`, and likewise for "F" or "female" to `:subject.sex/female`.
 
-We are now ready to add more data! Note, that if you want to, you can incrementally run prepare
+We are now ready to add more data! Note that if you want to, you can incrementally run prepare
 or even transact as you go (assuming you're using local dev databases), just to check for errors
 or omitted mappings. For the purpose of the tutorial, we'll continue, but at any point you can
-refer back to the commonds from the [quickstart](quickstart.md) and run the commands there
+refer back to the commands from the [quickstart](quickstart.md) and run the commands there
 on your import in progress.
 
 ### Samples data
@@ -245,7 +245,7 @@ There are two attributes used of a new kind here — timepoint and subject are
 both _ref_ attributes. That means they refer to other entities, in this case,
 the `subject` and `timepoint` entities. You will notice, if you look through
 the tables, that we do not have a `timepoints.tsv` file. However, as you can
-quick verify with grep, R, pandas, or spreadsheet software, we only have
+quickly verify with grep, R, pandas, or spreadsheet software, we only have
 two timepoints, the `baseline` timepoint and the `eos` timepoint.
 
 It is not necessary to add every data point in the dataset as a table, we can
@@ -293,7 +293,7 @@ that are property values. But it will attempt to parse any string in value posit
 
 ### Mapping in measurements.tsv
 
-Measurements, as captured by the `measurement` entity/namespace, is a very broad
+Measurement, as captured by the `measurement` entity/namespace, is a very broad
 entity type in the Pattern and CANDEL schemas. In general, any molecular assay
 or measurement taken in a lab is a measurement. When we refer to the
 [measurement schema](http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/measurement.html) we can
@@ -307,7 +307,7 @@ an assay performed on a sample. UnifyBio's validator will ensure in the
 CLI `bin/validate` step that the combination of attributes on any measurement
 makes sense and corresponds to specs and expectations.
 
-In our case, we have a fairly straight forward RNA-seq assay to map in:
+In our case, we have a fairly straightforward RNA-seq assay to map in:
 
 | fpkm               | hugo         | sample           |
 |--------------------|--------------|------------------|
@@ -360,7 +360,7 @@ A note on the tree structure: `:dataset/assays` contains all assays in a dataset
 for some datasets, like the one used in the [Prince Study](https://www.nature.com/articles/s41591-022-01829-9)
 these can get quite large and detailed. Assays contain one or more measurement sets, which contain one
 or more measurement inputs, to provide groupings that might represent different experimental conditions,
-or different ways of processing data compuationally, etc. Sometimes these introduce derived entities,
+or different ways of processing data computationally, etc. Sometimes these introduce derived entities,
 like [cell populations](http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/cell-population.html)
 grouped through flow cytometry, or
 [single cells](http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/single-cell.html)
@@ -400,7 +400,7 @@ The last data we have to import is our clinical data. A view of it is below:
 
 We have the overall survival data (as os), an ID for our patients, and a timepoint.
 In this case, all the ref targets (timepoints and patients) have been supplied,
-so the mapping is straight forward. Here it is in the context of the
+so the mapping is straightforward. Here it is in the context of the
 entire (and now complete) import:
 
 ```yaml title="complete tutorial-config.yaml" hl_lines="34-40"
@@ -447,7 +447,7 @@ dataset:
 ```
 
 You can refer to the [clinical observations schema](http://rcrf-data-commons-dashboard--env.eba-t2nvd7ac.us-east-1.elasticbeanstalk.com/schema/1.3.1/clinical-observation.html)
-to see what other information can be encoded in clinical observations. As present, they play a similar role to measurements,
+to see what other information can be encoded in clinical observations. At present, they play a similar role to measurements,
 being typed implicitly through the presence or lack of certain attributes. Entities can be grouped arbitrarily within
 clinical observation sets, representing different sites, contexts within a study or other medical interactions, labs,
 and so on.
@@ -465,7 +465,7 @@ The steps are:
 bin/unify prepare --import-config PATH/TO/example-import/tutorial-config.yaml --working-directory TEMP-DIR/tutorial-attempt-1
 bin/unify request-db --database my-first-db
 bin/unify transact --working-directory TEMP-DIR/tutorial-attempt-1 --database my-first-db
-bin/unfy validate --database my-first-db
+bin/unify validate --database my-first-db
 ```
 _Note_: when you run validate without a `--dataset` arg, it defaults to the most recent dataset
 in the database.
@@ -478,16 +478,16 @@ a number of places:
   e.g. a column specified in the config might not exist in the file.
 - while transacting data, you might find that some values that are supposed to be unique
   conflict with each other, or some reference data specified doesn't actually exist. E.g.
-  you might have a gene name that comes fom a different standard, or a different version of the HGNC standard even.
+  you might have a gene name that comes from a different standard, or a different version of the HGNC standard even.
 - while validating data, you might find that you created measurements with a nonsensical combination of
   attributes, like a `:measurement/fpkm` attribute with a `:measurement/epitope` protein target. Or you
-  might find that you had a measurement that referred to sample a sample ID that didn't actually exist
+  might find that you had a measurement that referred to a sample ID that didn't actually exist
   in your sample table.
 
 Given these situations, it's completely normal and expected that you will hit hiccups and need to debug
 them. The Unify CLI tries to provide error messages that are as specific and direct as possible to
 make this as painless as possible. It can't magically provide the missing information from
-the bogus xslx file the vendor put in your Box folder, but it will do its best to identify
+the bogus xlsx file the vendor put in your Box folder, but it will do its best to identify
 any issues those sorts of things introduce.
 
 ## Further Steps

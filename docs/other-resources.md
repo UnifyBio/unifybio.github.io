@@ -3,7 +3,7 @@
 Because UnifyBio is built heavily around the use of
 [Datomic](https://docs.datomic.com/datomic-overview.html) and 
 [Unify](https://github.com/vendekagon-labs/unify/),
-users are encourages to refer to documentation and tutorials for these. We also recommend
+users are encouraged to refer to documentation and tutorials for these. We also recommend
 perusing resources related to [CANDEL](https://candelbio.github.io/candel-bio-website/),
 the project which birthed prototypes of the tools used in UnifyBio.
 
@@ -24,7 +24,7 @@ in the [official Datomic documentation Day of Datomic topic](https://docs.datomi
 ## CANDEL resources
 
 In addition to the [website](https://candelbio.github.io/candel-bio-website/)
-and resources in the [GitHub repos](https://github.com/CANDELbio)
+and resources in the [GitHub repos](https://github.com/CANDELbio),
 there have been multiple talks on CANDEL, linked here for convenience.
 
 #### Building a Unified Cancer Immunotherapy Data Library
