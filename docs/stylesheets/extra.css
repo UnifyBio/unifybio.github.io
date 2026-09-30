@@ -1,0 +1,210 @@
+/* UnifyBio docs theme: matches the UnifyBio landing page (dark indigo, mint accent). */
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;600&display=swap");
+
+:root > * {
+  --md-hue: 255;
+}
+
+[data-md-color-scheme="slate"] {
+  --ub-bg: #130b33;
+  --ub-bg-2: #1a1040;
+  --ub-bg-3: #231654;
+  --ub-line: rgb(190 175 255 / 14%);
+  --ub-text: #f2f0fb;
+  --ub-soft: #b3aed0;
+  --ub-dim: #8a84ad;
+  --ub-accent: #7cf0d4;
+  --ub-accent-2: #a78bfa;
+  --ub-warm: #ffc27a;
+
+  --md-default-bg-color: var(--ub-bg);
+  --md-default-bg-color--light: rgb(19 11 51 / 70%);
+  --md-default-bg-color--lighter: rgb(19 11 51 / 30%);
+  --md-default-bg-color--lightest: rgb(19 11 51 / 12%);
+  --md-default-fg-color: var(--ub-text);
+  --md-default-fg-color--light: var(--ub-soft);
+  --md-default-fg-color--lighter: var(--ub-dim);
+  --md-default-fg-color--lightest: var(--ub-line);
+
+  --md-primary-fg-color: var(--ub-bg);
+  --md-primary-fg-color--light: var(--ub-bg-3);
+  --md-primary-fg-color--dark: var(--ub-bg);
+  --md-primary-bg-color: var(--ub-text);
+  --md-primary-bg-color--light: var(--ub-soft);
+
+  --md-accent-fg-color: var(--ub-accent);
+  --md-accent-fg-color--transparent: rgb(124 240 212 / 10%);
+  --md-accent-bg-color: var(--ub-bg);
+
+  --md-typeset-color: var(--ub-text);
+  --md-typeset-a-color: var(--ub-accent);
+  --md-typeset-mark-color: rgb(124 240 212 / 25%);
+  --md-typeset-table-color: var(--ub-line);
+
+  --md-code-bg-color: #0d0726;
+  --md-code-fg-color: #dcd7f5;
+  --md-code-hl-color: rgb(124 240 212 / 15%);
+  --md-code-hl-keyword-color: var(--ub-accent-2);
+  --md-code-hl-string-color: var(--ub-warm);
+  --md-code-hl-number-color: var(--ub-warm);
+  --md-code-hl-function-color: var(--ub-accent);
+  --md-code-hl-constant-color: var(--ub-accent-2);
+  --md-code-hl-comment-color: var(--ub-dim);
+  --md-code-hl-name-color: #dcd7f5;
+  --md-code-hl-operator-color: var(--ub-soft);
+  --md-code-hl-punctuation-color: var(--ub-soft);
+  --md-code-hl-special-color: var(--ub-accent);
+  --md-code-hl-generic-color: var(--ub-soft);
+  --md-code-hl-variable-color: #dcd7f5;
+
+  --md-footer-bg-color: var(--ub-bg-2);
+  --md-footer-bg-color--dark: var(--ub-bg);
+}
+
+body {
+  background: var(--ub-bg);
+}
+
+/* Header: translucent with a hairline, like the landing page */
+.md-header {
+  background: rgb(19 11 51 / 72%);
+  backdrop-filter: blur(14px);
+  box-shadow: none;
+  border-bottom: 1px solid var(--ub-line);
+}
+.md-header__button.md-logo img {
+  height: 1.6rem;
+  border-radius: 4px;
+}
+.md-header__title {
+  font-family: "Jura", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+.md-tabs {
+  background: transparent;
+}
+
+/* Type */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: "Jura", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--ub-text);
+}
+.md-typeset h1 {
+  font-size: 2.4rem;
+  line-height: 1.08;
+  margin-bottom: 1.2em;
+}
+.md-typeset h2 {
+  border-top: 1px solid var(--ub-line);
+  padding-top: 1.2em;
+}
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Jura", system-ui, sans-serif;
+  color: var(--ub-soft);
+}
+.md-typeset a {
+  text-decoration: none;
+}
+.md-typeset a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.md-typeset hr {
+  border-bottom-color: var(--ub-line);
+}
+
+/* Sidebar navigation */
+.md-nav__title {
+  font-family: "Jura", system-ui, sans-serif;
+}
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--ub-accent);
+}
+.md-nav--primary .md-nav__link:hover {
+  color: var(--ub-text);
+}
+
+/* Search */
+.md-search__form {
+  background: var(--ub-bg-3);
+  border: 1px solid var(--ub-line);
+  border-radius: 999px;
+}
+.md-search__form:hover {
+  background: var(--ub-bg-3);
+}
+.md-search__output {
+  background: var(--ub-bg-2);
+}
+
+/* Code */
+.md-typeset code,
+.md-typeset pre > code {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+.md-typeset pre > code {
+  border: 1px solid var(--ub-line);
+  border-radius: 16px;
+}
+.md-typeset :not(pre) > code {
+  background: var(--ub-bg-3);
+  border-radius: 6px;
+  color: var(--ub-accent);
+}
+
+/* Tables, admonitions, tabs */
+.md-typeset table:not([class]) {
+  background: var(--ub-bg-2);
+  border: 1px solid var(--ub-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.md-typeset table:not([class]) th {
+  background: var(--ub-bg-3);
+  color: var(--ub-text);
+}
+.md-typeset .admonition,
+.md-typeset details {
+  background: var(--ub-bg-2);
+  border-color: var(--ub-accent-2);
+  border-radius: 14px;
+}
+.md-typeset .tabbed-set {
+  border: 1px solid var(--ub-line);
+  border-radius: 14px;
+}
+
+/* Buttons */
+.md-typeset .md-button {
+  border-radius: 999px;
+  border-color: var(--ub-line);
+  color: var(--ub-text);
+}
+.md-typeset .md-button--primary {
+  background: var(--ub-accent);
+  border-color: transparent;
+  color: #0b0626;
+  font-weight: 600;
+}
+
+/* Footer */
+.md-footer {
+  border-top: 1px solid var(--ub-line);
+}
+
+/* Selection + scrollbars */
+::selection {
+  background: rgb(124 240 212 / 30%);
+}
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background: var(--ub-accent-2);
+  border-radius: 6px;
+}

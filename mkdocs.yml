@@ -2,6 +2,20 @@ site_name: UnifyBio
 site_url: https://unifybio.github.io/
 theme:
   name: material
+  favicon: assets/logo.png
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+extra_css:
+  - stylesheets/extra.css
 nav:
   - index.md
   - concepts.md
