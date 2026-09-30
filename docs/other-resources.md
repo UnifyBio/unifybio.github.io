@@ -21,6 +21,12 @@ Two excellent resources for coming to grips with Datomic datalog quickly are
 are learning materials, slides, and video links available for the Day of Datomic series
 in the [official Datomic documentation Day of Datomic topic](https://docs.datomic.com/resources/day-of-datomic.html).
 
+## UnifyBio Talks
+
+#### UnifyBio: Power Tools for Translational Data Science
+
+[![Watch the video](https://img.youtube.com/vi/HU-uwSUZETw/maxresdefault.jpg)](https://youtu.be/HU-uwSUZETw)
+
 ## CANDEL resources
 
 In addition to the [website](https://candelbio.github.io/candel-bio-website/)
