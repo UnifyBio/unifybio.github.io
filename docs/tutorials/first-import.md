@@ -74,7 +74,7 @@ example-import
 To get started, provide the top level structure in the YAML file.
 
 ```yaml title="tutorial-config.yaml"
-:unify/import:
+unify/import:
   user: "some.user@gmail.com"
 dataset:
   name: "my-first-import"
@@ -148,7 +148,7 @@ mapping from columns to attributes that we just identified. The required update
 has been higlighted for you in the snippet below:
 
 ```yaml title="tutorial-config.yaml" hl_lines="5-10"
-:unify/import:
+unify/import:
   user: "some.user@gmail.com"
 dataset:
   name: "my-first-import"
@@ -169,7 +169,7 @@ then inspect the relevant contents.
 
 
 ```yaml title="tutorial-config.yaml" hl_lines="3"
-:unify/import:
+unify/import:
   user: "some.user@gmail.com"
   mappings: mappings.yaml
 dataset:
@@ -323,7 +323,7 @@ we can see `:measurement/fpkm` in the measurement entity in the schema, which
 stands for _fragments per kilobase million_, i.e. a normalized metric for
 RNA transcript counts.
 
-```yaml title="dataset porition of tutorial-config.edn" hl_lines="21-30"
+```yaml title="dataset portion of tutorial-config.yaml" hl_lines="21-30"
 dataset:
   name: "my-first-import"
   subjects:
@@ -403,8 +403,8 @@ In this case, all the ref targets (timepoints and patients) have been supplied,
 so the mapping is straight forward. Here it is in the context of the
 entire (and now complete) import:
 
-```yaml title="complete tutorial-config.edn" hl_lines="34-40"
-:unify/import:
+```yaml title="complete tutorial-config.yaml" hl_lines="34-40"
+unify/import:
   user: "some.user@gmail.com"
   mappings: "mappings.yaml"
 dataset:
