@@ -208,3 +208,10 @@ body {
   background: var(--ub-accent-2);
   border-radius: 6px;
 }
+
+/* EDN / Clojure: keywords in mint, strings warm, brackets quiet */
+.md-typeset .highlight .ss { color: var(--ub-accent); }
+.md-typeset .highlight .s,
+.md-typeset .highlight .s2 { color: var(--ub-warm); }
+.md-typeset .highlight .p { color: var(--ub-dim); }
+.md-typeset .highlight .nt { color: var(--ub-accent-2); }
